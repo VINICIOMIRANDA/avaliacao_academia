@@ -1,0 +1,30 @@
+<a href="#!cadastro_novo" class="btn btn-warning"> Cadastrar Clientes</a>
+<a href="#!meu_usuario" class="btn btn-warning"> Meu Usuario</a>
+<a href="#!clientes" class="btn btn-warning"> Clientes </a>
+<a href="#!login" class="btn btn-warning"> Login </a>
+<a href="#!exercicios" class="btn btn-warning"> Exercicios </a>
+<a href="#!calcule_imc" class="btn btn-warning"> Calcule IMC </a>
+
+
+<div ng-app="aplicacao" ng-controller="ImcCrtl" ng-init="VerificarUsuario()">Logado : {{usuario_autenticacao}}
+
+    <div class="container">
+
+        <div class="my-3">
+
+            <h2> Forneça a sua altura e peso</h2>
+            <div class="col-md-6 ml-2 pl-2">
+                <input type="numer" id="altura" ng-model="altura" name="altura" placeholder="Digite sua altura"><br>
+            </div>
+            <div class="col-md-6 ml-2 pl-2">
+                <input type="numer" id="peso" ng-model="peso" name="peso" placeholder="Digite seu  peso"><br>
+            </div>
+            <div class="col-md-6 my-3 p-2">
+                <button type="button" class="btn btn-warning" ng-click="calcular()">Calcular</button> <br>
+            </div>
+
+            {{ adicionar_texto}}
+
+        </div>
+    </div>
+</div>

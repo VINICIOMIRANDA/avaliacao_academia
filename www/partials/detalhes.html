@@ -1,0 +1,83 @@
+<a href="#!cadastro_novo" class="btn btn-warning"> Cadastrar Clientes</a>
+<a href="#!meu_usuario" class="btn btn-warning"> Meu Usuario</a>
+<a href="#!clientes" class="btn btn-warning"> Clientes </a>
+<a href="#!login" class="btn btn-warning"> Login </a>
+<a href="#!exercicios" class="btn btn-warning"> Exercicios </a>
+<a href="#!calcule_imc" class="btn btn-warning"> Calcule IMC </a>
+
+
+<div ng-app="aplicacao" ng-controller="DetalhesCrtl" ng-init="CarregarUsuario()"> Logado : {{usuario_autenticacao}}
+
+    <div class="container">
+
+        <div class="my-3 p-2">
+
+            <h4 class="mb-3">Meus Dados</h4>
+
+            <div class="my-3 p-2">
+                {{nome}}
+            </div>
+            <div class="my-3 p-2">
+                {{data_nascimento}}
+            </div>
+            <div class="my-3 p-2">
+                {{telefone}}
+            </div>
+            <div class="my-3 p-2">
+                {{email}}
+            </div>
+            <div class="my-3 p-2">
+                {{altura}}
+            </div>
+            <div class="my-3 p-2">
+                {{peso}}
+            </div>
+            <div class="my-3 p-2">
+                {{imc}}
+            </div>
+
+            <h3>Minhas atividades</h3>
+            <ul>
+                <li ng-repeat="(key, value) in meuObject">
+                   {{key}} : {{records}}
+                
+                </li>
+            </ul>
+            <ul>
+                <li ng-repeat="(key, value) in meuObject2">
+                   {{key}} : {{records2}}
+                
+                </li>
+            </ul>
+
+             {{data_aerobico}}
+             {{exercicios_aerobicos}}
+             {{km}}
+             {{calorias}}
+       
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+</div>

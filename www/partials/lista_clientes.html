@@ -1,0 +1,48 @@
+<div ng-app="aplicacao" ng-controller="ListCtrl" ng-init="Pesquisa()">
+    <a href="#!cadastro_novo" class="btn btn-warning"> Cadastrar Clientes</a>
+    <a href="#!meu_usuario" class="btn btn-warning"> Meu Usuario</a>
+    <a href="#!clientes" class="btn btn-warning"> Clientes </a>
+    <a href="#!login" class="btn btn-warning"> Login </a>
+    <a href="#!exercicios" class="btn btn-warning"> Exercicios </a>
+    <a href="#!calcule_imc" class="btn btn-warning"> Calcule IMC </a>  
+        
+        
+     <div ng-app="aplicacao"  ng-controller="ListCtrl" ng-init="VerificarUsuario()">   Logado : {{usuario_autenticacao}} </div>
+
+    <div class="my-3 p-2">
+        <div class="py-3">
+            <h4 class="mb-3">Listagem de Clientes</h4>
+            <div class="py-3">
+                <a href="#!cadastro_novo" class="btn btn-warning"> Novo Cliente</a>
+                <div class="py-3">
+                    <div class="table table-responsive-sm">
+                        <table class="table table-hover" id="tbdetalhes">
+                            <thead>
+                                <tr ">
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Telefone</th>
+                                    <th scope="col">E-mail</th>
+                                    <th scope="col">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+
+                        </table>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

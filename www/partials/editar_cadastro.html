@@ -1,0 +1,66 @@
+<a href="#!cadastro_novo" class="btn btn-warning"> Cadastrar Clientes</a>
+<a href="#!clientes" class="btn btn-warning"> Clientes </a>
+<a href="#!login" class="btn btn-warning"> Login </a>
+<a href="#!exercicios" class="btn btn-warning"> Exercicios </a>
+<a href="#!calcule_imc" class="btn btn-warning"> Calcule IMC </a>
+
+<div ng-app="aplicacao"  ng-controller="EdtCtrl" ng-init="VerificacaoInicial()">   Logado : {{usuario_autenticacao}} </div>
+
+<div ng-app="aplicacao"  ng-controller="EdtCtrl" ng-init="VerificarUsuario()">
+       <div class="container">
+
+           <div class="my-3 p-2">
+
+               <h4 class="mb-3">Cadastro de clientes</h4>
+               <form action="#" method="POST">
+
+                   <div class="py-3">
+                       
+
+                           <div class="col-md-6 ml-2 pl-2">
+
+                               <label for="fname">Nome completo</label><br>
+                               <input type="text" id="nome" name="nome" ng-model="nome"
+                                   placeholder="Nome completo"><br>
+                           </div>
+
+                           <div class="col-md-6 ml-2 pl-2">
+                               <label>Data de Nascimento</label><br>
+                               <input type="text" id="data_nasc" name="data_nasc" ng-model="data_nasc"
+                                   placeholder="dd/mm/aaaa"><br>
+                           </div>
+                           <div class="col-md-6 ml-2 pl-2">
+                               <label>Telefone</label><br>
+                               <input type="text" id="telefone" ng-model="telefone"
+                                   placeholder=" (048) 98765-4321 "><br>
+                           </div>
+                           <div class="col-md-6 ml-2 pl-2">
+                               <label>E-mail</label><br>
+                               <input type="email" id="email" ng-model="email" name="email"
+                                   placeholder="seu e-mail"><br>
+                           </div>
+                           <div class="col-md-6 ml-2 pl-2">
+                               <label>Senha </label><br>
+                               <input type="password" id="senha" ng-model="senha" name="senha" placeholder="8 digitos"
+                                   required minlength="8"><br>
+                           </div>
+
+
+                           <div class="col-md-6 ml-2 pl-2">
+                      
+                              <button type="button" class="btn btn-warning" ng-click="salvar()"">Salvar</button>
+                              <button type=" button" class="btn btn-secondary" ng-click="cancelar()">Cancelar</button>
+                           </div>
+                           
+                               </div>
+                           </div>
+                       
+               </form>
+
+
+
+           </div>
+       </div>
+
+
+   </div>

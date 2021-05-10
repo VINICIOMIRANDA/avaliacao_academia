@@ -1,0 +1,23 @@
+<div ng-app="aplicacao" ng-controller="LoginCtrl">
+    <div class="container">
+        <div class="my-3 p-2">
+
+            <h2>Efetue Login</h2>
+
+
+            <div class="py-3">
+                <img src="../img/logo.png" title="logo" alt="logo" width="150" height="150"></br></a>
+                <input type="email" id="email" name="email" ng-model="email" placeholder="Seu e-mail"> <br>
+                <input type="password" id="senha" name="senha" ng-model="senha" placeholder="Digite sua senha"><br>
+
+                <div class="py-2">
+                    <input type="submit" class="btn btn-warning" value="Entrar" ng-click="validar()" /> <br>
+                    <label for="npossui">Não possui cadastro?</label><br>
+                    <a href="#!cadastro_novo" class="btn btn-info"> Cadastrar Clientes</a>
+                </div>
+                {{mensagem}}
+            </div>
+        </div>
+
+
+    </div>

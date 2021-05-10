@@ -1,0 +1,85 @@
+<a href="#!cadastro_novo" class="btn btn-warning"> Cadastrar Clientes</a>
+<a href="#!meu_usuario" class="btn btn-warning"> Meu Usuario</a>
+<a href="#!clientes" class="btn btn-warning"> Clientes </a>
+<a href="#!login" class="btn btn-warning"> Login </a>
+<a href="#!exercicios" class="btn btn-warning"> Exercicios </a>
+<a href="#!calcule_imc" class="btn btn-warning"> Calcule IMC </a>
+
+
+
+<div ng-app="aplicacao" ng-controller="ExerMCrtl" ng-init="VerificarUsuario()">Logado : {{usuario_autenticacao}}
+
+    <div class="container">
+
+        <div class="my-3 p-2">
+
+            <h2>Exercicios Musculação</h2>
+            <h3>Cadastre aqui suas atividades:</h3>
+
+
+            <div>
+                <label for="grupo_treinos">Grupo de Treinos</label><br>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ng-model ="g_treinos" id="g_treinos">
+                    <option selected>Selecione o grupo de treino </option>
+                    <option id="superior" name="superior" value="11">Peito, tríceps e ombros</option>
+                    <option id="costas" name="costas" value="12">Costas e bíceps</option>
+                    <option id="inferior" name="inferior" value="13">Treino inferior e abdômen</option>
+
+                </select>
+
+
+            </div>
+            <div>
+                <label for="g_series">Series</label><br>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ng-click="series" id=g_series>
+                    <option selected>Selecione a série</option>
+                    <option id="seriesUm" name="seriesUm" value="21">3 x 15</option>
+                    <option id="seriesDois" name="seriesDois" value="22">4 x 10</option>
+                    <option id="seriesTres" name="seriesTres" value="23">5 x 5</option>
+
+                </select>
+            </div>
+            <div>
+
+                <label for="carga">Carga (kg)</label><br>
+                <input type="text" name="carga" ng-model="carga" id="carga" placeholder="1.00 ">
+            </div>
+
+            <div><br>
+                <label for="g_exercicios">Exercicios</label><br>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ng-model="g_exercicios" id=g_exercicios>
+                    <option selected>Selecione a série</option>
+                    <option id="exer_hiper_um" name="exer_hiper_um" value="1">Levantamento Terra (deadlift)</option>
+                    <option id="exer_hiper_dois" name="exer_hiper_dois" value="2">Agachamento livre</option>
+                    <option id="exer_hiper_tres" name="exer_hiper_tres" value="3">Supino Plano (reto)</option>
+                    <option id="exer_hiper_quatro" name="exer_hiper_quatro" value="4">Elevações em Barra fixa</option>
+                    <option id="exer_hiper_cinco" name="exer_hiper_cinco" value="5">Dips nas paralelas (Fundos)</option>
+                    <option id="exer_hiper_seis" name="exer_hiper_seis" value="6">Remada Curva (baixa)</option>
+                    <option id="exer_hiper_sete" name="exer_hiper_sete" value="7">Press militar</option>
+                    <option id="exer_emag_um" name="exer_emag_um" value="10">Prancha frontal</option>
+                    <option id="exer_emag_dois" name="exer_emag_dois" value="11">Pular corda</option>
+                    <option id="exer_emag_tres" name="exer_emag_tres" value="12">Elevação lateral de pernas</option>
+                    <option id="exer_emag_quatro" name="exer_emag_quatro" value="13">Elevações em Barra fixa</option>
+                    <option id="exer_emag_cinco" name="exer_emag_cinco" value="14">Caminhada, esteira e corrida</option>
+                    <option id="exer_emag_seis" name="exer_emag_seis" value="15">Marcha estacionária</option>
+                    <option id="exer_emag_sete" name="exer_emag_sete" value="16">Flexão de braço</option>
+                    <option id="exer_emag_oito" name="exer_emag_oito" value="17">Abdominal reto</option>
+                    <option id="exer_emag_nove" name="exer_emag_nove" value="18">Agachamento</option>
+                    <option id="exer_emag_dez" name="exer_emag_dez" value="19">Burpee</option>
+
+                </select>
+            </div>
+
+
+        </div>
+
+
+        <button type="button" class="btn btn-warning" ng-click="salvar()">Salvar</button> <br>
+    </div>
+
+
+
+
+
+
+</div>

@@ -1,0 +1,51 @@
+<a href="#!cadastro_novo" class="btn btn-warning"> Cadastrar Clientes</a>
+<a href="#!meu_usuario" class="btn btn-warning"> Meu Usuario</a>
+<a href="#!clientes" class="btn btn-warning"> Clientes </a>
+<a href="#!login" class="btn btn-warning"> Login </a>
+<a href="#!exercicios" class="btn btn-warning"> Exercicios </a>
+<a href="#!calcule_imc" class="btn btn-warning"> Calcule IMC </a>
+
+
+
+<div ng-app="aplicacao" ng-controller="ExerACrtl" ng-init="VerificarUsuario()">
+    Logado : {{usuario_autenticacao}}
+
+
+    <div class="container">
+
+        <div class="my-3">
+
+            <div>
+                <h2>Exercicios Aerobicos</h2>
+            </div>
+
+            <div>
+                <h3>Cadastre aqui suas atividades:</h3>
+
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ng-model="id_aerobica" id=aerobica>
+                    <option selected>Selecione uma opção</option>
+                    <option id="corrida" name="corrida" value="11">Corrida</option>
+                    <option id="pedalada" name="pedalada" value="12">Pedalada</option>
+                    <option id="caminhada" name="caminhada" value="13">Caminhada</option>
+
+                </select>
+            </div>
+
+
+            <label for="q_percorrida">Distância percorrida em (km)</label><br>
+            <input type="text" name="km" ng-model="km" id="km" placeholder="1.00 "><br>
+
+
+            <label for="t_gasto">Tempo Gasto</label><br>
+            <input type="text" name="t_gasto" ng-model="t_gasto" id="t_gasto" placeholder="00:00:00"><br>
+
+
+            <label for="calorias">Calorias (kcal)</label><br>
+            <input type="text" name="calorias" ng-model="calorias" id="calorias" placeholder="50"><br>
+
+            <button type="button" class="btn btn-warning" ng-click="salvar()">Salvar</button> <br>
+
+        </div>
+    </div>
+
+</div>
