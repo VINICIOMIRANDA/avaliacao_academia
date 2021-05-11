@@ -40,7 +40,7 @@ appControllers.controller('CadNovCtrl', ['$scope', '$routeParams', function ($sc
 
         var id = [];
 
-        
+
 
         var testes = JSON.parse(storage.getItem('cadastro_clientes') || length);
         console.log("testes", testes);
@@ -65,6 +65,7 @@ appControllers.controller('CadNovCtrl', ['$scope', '$routeParams', function ($sc
 
         console.log("Enviando para o localStorage", nome[cont], data_nasc[cont])
 
+
         var cadastro_clientes = JSON.parse(storage.getItem('cadastro_clientes') || '[]');
         cadastro_clientes.push({
             nome: nome[cont],
@@ -84,6 +85,9 @@ appControllers.controller('CadNovCtrl', ['$scope', '$routeParams', function ($sc
 
         window.location.href = "#!clientes";
         confirm("Cadastro realizado com sucesso");
+
+
+
 
 
     }
@@ -211,6 +215,7 @@ appControllers.controller('ListCtrl', ['$scope', '$routeParams', function ($scop
             <td>${item.email}</td>
             <td><a href="/#!clientes/deletar/:id=${item.id}"  class="btn btn-danger">Apagar</a>
             <td><a href="/#!clientes/editar_clientes/:id=${item.id}" ng-click="Editar()" class="btn btn-success">Editar</a> 
+
          </td>
             </tr>`;
         });
@@ -232,13 +237,13 @@ appControllers.controller('EdtCtrl', ['$scope', '$routeParams', function ($scope
 
         var storage = window.localStorage;
         var usuario_autenticacao = [];
-        //  console.log("Carregado");
+      //  console.log("Carregado");
 
         var tab_usuarios = JSON.parse(storage.getItem('tab_usuarios') || '[]');
         var cont = tab_usuarios[tab_usuarios.length - 1];
 
-        //  console.log("Carregado", tab_usuarios);
-        //  console.log("Carregado", cont);
+      //  console.log("Carregado", tab_usuarios);
+      //  console.log("Carregado", cont);
 
         var usuario_autenticacao = cont.usuario_email;
         $scope.usuario_autenticacao = usuario_autenticacao;
@@ -254,17 +259,12 @@ appControllers.controller('EdtCtrl', ['$scope', '$routeParams', function ($scope
         var usuario_encontrado = -1;
         var usuario_email = [];
         var nome = [];
+        var email = [];
         var data_nasc = [];
         var id_usuario = [];
         var telefone = [];
         var senha = [];
         var storage = window.localStorage;
-
-
-
-
-
-
         var cadastro_clientes = JSON.parse(storage.getItem('cadastro_clientes') || '[]');
 
         console.log("$scope.id", id);
@@ -308,13 +308,13 @@ appControllers.controller('EdtCtrl', ['$scope', '$routeParams', function ($scope
         console.log("Editar data_nasc", data_nasc);
         console.log("Editar data_nasc", senha);
         console.log("Editar");
-        //        cadastro_clientes_exclusão = JSON.stringify(cadastro_clientes[id_usuario]);
+//        cadastro_clientes_exclusão = JSON.stringify(cadastro_clientes[id_usuario]);
         $scope.nome = nome;
         $scope.data_nasc = data_nasc;
         $scope.telefone = telefone;
         $scope.email = email;
         $scope.senha = senha;
-
+        
 
 
 
@@ -325,76 +325,108 @@ appControllers.controller('EdtCtrl', ['$scope', '$routeParams', function ($scope
     $scope.salvar = function () {
 
 
-
+        
         var url = window.location.href;
         var res = url.split('=');
         var id = res[1];
         var usuario_encontrado = -1;
-        var email = [];
+        var usuario_email = [];
         var nome = [];
         var data_nasc = [];
         var cont = 0;
         var telefone = [];
         var senha = [];
-
-
-
-
         var storage = window.localStorage;
-       
-
-        var cadastro_clientes = JSON.parse(storage.getItem('cadastro_clientes'));
-        console.log("Editar 1",cadastro_clientes);
-
-        var usuario = cadastro_clientes.find( usuario => usuario.id == id );
-        console.log("usuario",usuario)
-
-        usuario.nome = $scope.nome;
-        usuario.data_nasc = $scope.data_nasc;
-        usuario.telefone = $scope.telefone;
-        usuario.email = $scope.email;
-        usuario.senha = $scope.senha;
-
-        storage.setItem(cadastro_clientes, JSON.stringify(usuario) );
-     //   console.log("cadastro_clientes depois do stringify", JSON.stringify(lista_cadastro_clientes[cont]));
+        var cadastro_clientes = JSON.parse(storage.getItem('cadastro_clientes') || '[]');
 
 
 
-    }      
-       
+        for (i = 0; i < cadastro_clientes.length; i++) {
+            console.log("Usuario localStorage", cadastro_clientes[i].id, id);
 
 
-        
-      
-        
+            if (cadastro_clientes[i].id == id) {
+                console.log("Encontrou o usuário");
+
+                usuario_encontrado = 1;
+                
+                
+                nome[cont] = $scope.nome;
+                data_nasc[cont] = $scope.data_nasc;
+                telefone[cont] = $scope.telefone;
+                email[cont] = $scope.email;
+                senha[cont] = $scope.senha;
+                id[cont] = id;
+              
+
+                
+                
 
 
 
+                break
+            } else {
+
+                usuario_encontrado = 0;
+
+
+            }
+        }
+
+
+        cadastro_clientes.push({
+            nome: nome[cont],
+            data_nasc: data_nasc[cont],
+            telefone: telefone[cont],
+            email: email[cont],
+            senha: senha[cont],
+            id: id[cont],
+        })
+
+        storage.setItem("cadastro_clientes", JSON.stringify(cadastro_clientes));
+
+
+        console.log(cadastro_clientes);
+        console.log("Alterando NO LOCALSTORAGE");
+        window.location.href = "#!clientes";
+
+
+     
 
 
 
+        confirm("Deseja realizar a alteração?");
+   
+    }
 
-$scope.cancelar = function () {
-    $scope.nome = "";
-    $scope.data_nasc = "";
-    $scope.telefone = "";
-    $scope.email = "";
-    $scope.senha = "";
-    $scope.checkbox = "off";
+    
+    $scope.cancelar = function () {
+        $scope.nome = "";
+        $scope.data_nasc = "";
+        $scope.telefone = "";
+        $scope.email = "";
+        $scope.senha = "";
+        $scope.checkbox = "off";
 
 
-    window.location.href = "#!clientes";
+        window.location.href = "#!clientes";
 
 
-}
+    }
 
 }]);
 
+
 appControllers.controller('DeltCrtl', ['$scope', '$routeParams', function ($scope, $routeParams) {
+
+    $scope.identidade = $routeParams.id;
+    console.log(" Parametro $scope.id", $scope.id)
+
     $scope.deletar = function () {
 
-        var url = window.location.href;
-        var res = url.split('=');
+        //var url = window.location.href;
+        // var res = url.split('=');
+        var res = $scope.identidade.split('=');
         var id = res[1];
         var usuario_encontrado = -1;
         var usuario_email = [];
